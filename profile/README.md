@@ -7,9 +7,11 @@ your program as you type, a command line, a library of web components, and the t
 coding agents build it all together.
 
 ```spell
-a card is a thing
-cards have a suit as one of clubs, diamonds, hearts or spades
-the color of a card is red if its suit is either diamonds or hearts otherwise it is black
+a card is a thing:
+  - its "suit" is one of clubs, diamonds, hearts or spades
+  - its "color" is red if:
+      its suit is either diamonds or hearts
+      otherwise it is black
 ```
 
 _Real spell, from the Solitaire example.  It compiles to JavaScript, TypeScript or Python._
