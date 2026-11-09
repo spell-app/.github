@@ -3,7 +3,7 @@
 **English you can run.**
 
 ```spell
-a "card" is a drawable thing:
+a "card" is a view:
 	- its "suit" is one of clubs, diamonds, hearts or spades
 	- its "color" is:
 		red if its suit is diamonds or hearts
@@ -30,44 +30,63 @@ and the tooling that lets people and coding agents build it all together.
 - **People who don't program** can read, change and make real software, in plain English.
 - **An AI writes Spell, and you can read what it wrote.**  Checking and changing it is how you learn to write your
   own.  That's the direction;  the language and the editor are here today.
-- **One language, many targets.**  English in;  JavaScript, TypeScript and Python out.
+- **Many languages, many targets.**  English and Spanish in;  JavaScript, TypeScript and Python out.
 
-![English in, three targets out:  Spell's one tree in the middle, JavaScript, TypeScript and Python on the way out, WebAssembly coming](images/languages-and-targets.svg)
+![Human languages in, programming languages out:  English and Spanish read into Spell today;  JavaScript, TypeScript and Python come out of it](images/languages-and-targets.svg)
 
-_Spanish is coming, and so is WebAssembly:  more languages in, more targets out, never every pair._
+_A Spanish program is a Spanish file, `Carta.es.spell`, and it compiles to the same targets._
 
-## The repos
+## Spaces:  where projects and people live
 
-Five git repos, one npm package each.
-The kit comes first;  the other four are cloned inside it and share one install.
+```text
+@spell/examples/Solitaire/Solitaire.spellml
+└──── group ──┘ └project─┘ └──── file ──┘
+```
 
-![The five Spell repos stacked by what they use:  spell-app on top, spell-epic beside it, spell-lang and spell-ui on the kit](images/repos.svg)
+Every project and every file in Spell has an address like that one.
+It's the same address in the editor, on the command line, and in the project that imports it.
 
-_Every arrow points down:  a repo uses only what's below it._
+A space is a person's or an organization's folder of projects:
+`@spell` is Spell's own, and `owen@spell` is a person's, at Spell.
 
-| Repo | What it is |
+If you know npm, `@spell/library/people` reads like a scoped package, `@org/name`, and it's meant to:
+whose it is, then what.
+The difference is that there's no registry and no install:
+the address alone says which folder holds the project, so a library on your disk is importable the moment it exists.
+
+## One repo, five parts
+
+[spell-app/spell](https://github.com/spell-app/spell) is one clone and one install, and every part of Spell is a folder in it.
+
+![One repo, its folders stacked by what they use:  on top, app uses parser and ui, and epic, beside it, uses ui;  parser and ui use the shared code under src/](images/repos.svg)
+
+_Every arrow points down:  a folder uses only what's below it._
+
+| Folder | What it is |
 | --- | --- |
-| [spell-kit](https://github.com/spell-app/spell-kit) | **Start here.**  The root everything is cloned into:  setup from zero, the command line, the page server, the element framework, the house style for agents.  Its README is the map of every other README. |
-| [spell-lang](https://github.com/spell-app/spell-lang) | The language:  a rule-based parser that knows no language, Spell's rules written in Rulex (regular expressions for words), the runtime, and a writer per target. |
-| [spell-app](https://github.com/spell-app/spell-app) | The editor:  a live programming environment that runs your program beside the text as you type;  spaces for projects and people;  the language server and the VS Code extension. |
-| [spell-ui](https://github.com/spell-app/spell-ui) | Spell UI:  accessible, themeable web components that load themselves on demand, for plain HTML or any framework. |
-| [spell-epic](https://github.com/spell-app/spell-epic) | Epics and sagas:  build software with a coding agent where the plan is a living page you review while it works.  A Claude Code plugin. |
+| [src/](https://github.com/spell-app/spell#the-shared-code-under-src) | The shared code under everything:  helpers, where data lives (`places`, Spell's word for a back-end), the toolchain, the page server, the element framework, the command line. |
+| [parser/](https://github.com/spell-app/spell/blob/main/parser/README.md) | The language:  a rule-based parser that knows no language, Spell's rules written in Rulex (regular expressions for words), the runtime, and a writer per target. |
+| [ui/](https://github.com/spell-app/spell/blob/main/ui/README.md) | Spell UI:  accessible, themeable web components that load themselves on demand, for plain HTML or any framework. |
+| [epic/](https://github.com/spell-app/spell/blob/main/epic/README.md) | Epics and sagas:  build software with a coding agent where the plan is a living page you review while it works.  A Claude Code plugin. |
+| [app/](https://github.com/spell-app/spell/blob/main/app/README.md) | The editor:  a live programming environment that runs your program beside the text as you type;  spaces for projects and people;  the language server and the VS Code extension. |
 
 ## Where to go next
 
-- **Set up from zero:**  [the kit's README](https://github.com/spell-app/spell-kit#setup-from-zero), for someone new to Node.
-- **Try the language in two minutes:**  [spell-lang's README](https://github.com/spell-app/spell-lang#try-it-in-two-minutes).
-- **See the editor:**  [spell-app's README](https://github.com/spell-app/spell-app).
-- **Drop a component on a page:**  [spell-ui's README](https://github.com/spell-app/spell-ui).
-- **Every command:**  [README-cli](https://github.com/spell-app/spell-kit/blob/main/README-cli.md), in the kit.
+- **Set up from zero:**  [the README](https://github.com/spell-app/spell#setup-from-zero), for someone new to Node.
+- **Try the language in two minutes:**  [the parser's README](https://github.com/spell-app/spell/blob/main/parser/README.md#try-it-in-two-minutes).
+- **See the editor:**  [the app's README](https://github.com/spell-app/spell/blob/main/app/README.md).
+- **Set up your own space:**  [Spaces](https://github.com/spell-app/spell/blob/main/app/README-spaces.md).
+- **Say where a program's data lives:**  [Where data lives](https://github.com/spell-app/spell/blob/main/parser/README-spell.md#where-data-lives).
+- **Drop a component on a page:**  [Spell UI's README](https://github.com/spell-app/spell/blob/main/ui/README.md).
+- **Every command:**  [the command line](https://github.com/spell-app/spell/blob/main/README/cli.md).
 - **Working on Spell, with or without an agent:**
-  [README-development](https://github.com/spell-app/spell-kit/blob/main/README-development.md) and
-  [README-agents](https://github.com/spell-app/spell-kit/blob/main/README-agents.md).
+  [development](https://github.com/spell-app/spell/blob/main/README/development.md) and
+  [agents](https://github.com/spell-app/spell/blob/main/README/agents.md).
 
-## Coming
+## 🌱 Coming
 
-🌱 Spell in other human languages (Spanish first) · a WebAssembly target · build a program by dragging things
-around · several people in one program at once · an agent that rewrites your React or Python as Spell so you
-can read it.
+The first release, planned for December 1, 2026 (until then, `npm install spell@next`) · more human languages ·
+more targets · build a program by moving things around, not only by typing · a public website for Spell, its docs and
+its components.
 
 Every README says what runs today and what's coming;  nothing is shown as working that you can't run.
