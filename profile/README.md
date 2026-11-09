@@ -68,11 +68,17 @@ _Every arrow points down:  a folder uses only what's below it._
 
 | Folder | What it is |
 | --- | --- |
-| [src/](https://github.com/spell-app/spell#the-shared-code-under-src) | The shared code under everything:  helpers, where data lives (`places`, Spell's word for a back-end), the toolchain, the page server, the element framework, the command line. |
-| [parser/](https://github.com/spell-app/spell/blob/main/parser/README.md) | The language:  a rule-based parser that knows no language, Spell's rules written in Rulex (regular expressions for words), the runtime, and a writer per target. |
-| [ui/](https://github.com/spell-app/spell/blob/main/ui/README.md) | Spell UI:  accessible, themeable web components that load themselves on demand, for plain HTML or any framework. |
-| [epic/](https://github.com/spell-app/spell/blob/main/epic/README.md) | Epics and sagas:  build software with a coding agent where the plan is a living page you review while it works.  A Claude Code plugin. |
-| [app/](https://github.com/spell-app/spell/blob/main/app/README.md) | The editor:  a live programming environment that runs your program beside the text as you type;  spaces for projects and people;  the language server and the VS Code extension. |
+| <nobr>[parser/](https://github.com/spell-app/spell/blob/main/parser/README.md)</nobr> | The language:  a rule-based parser that knows no language, Spell's rules written in Rulex (regular expressions for words), the runtime, and a writer per target. |
+| <nobr>[ui/](https://github.com/spell-app/spell/blob/main/ui/README.md)</nobr> | Spell UI:  accessible, themeable web components that load themselves on demand, for plain HTML or any framework. |
+| <nobr>[epic/](https://github.com/spell-app/spell/blob/main/epic/README.md)</nobr> | Epics and sagas:  build software with a coding agent where the plan is a living page you review while it works.  A Claude Code plugin. |
+| <nobr>[app/](https://github.com/spell-app/spell/blob/main/app/README.md)</nobr> | The editor:  a live programming environment that runs your program beside the text as you type;  spaces for projects and people;  the language server and the VS Code extension. |
+| <nobr>[src/](https://github.com/spell-app/spell#the-shared-code-under-src)</nobr> | The shared code under all of the above, one folder per job: |
+| <nobr>[src/&#8288;util](https://github.com/spell-app/spell/tree/main/src/util)</nobr> | Small helpers every part uses, and the reactive engine that keeps what's on screen up to date. |
+| <nobr>[src/&#8288;places](https://github.com/spell-app/spell/tree/main/src/places)</nobr> | Where data lives:  a place is Spell's word for a back-end.  Reading and writing it, the copy kept on your device, and sign-in. |
+| <nobr>[src/&#8288;toolchain](https://github.com/spell-app/spell/tree/main/src/toolchain)</nobr> | What every part builds with:  the shared lint, format and TypeScript settings. |
+| <nobr>[src/&#8288;server](https://github.com/spell-app/spell/tree/main/src/server)</nobr> | Serves pages on your machine, reloads them as you edit, and builds their bundles on demand. |
+| <nobr>[src/&#8288;element](https://github.com/spell-app/spell/tree/main/src/element)</nobr> | What makes a custom element on Solid 2, for every set of components, with its build tools and test helpers beside it. |
+| <nobr>[src/&#8288;cli](https://github.com/spell-app/spell/tree/main/src/cli)</nobr> | The `spell` command's base:  arguments, help, and each folder's own commands. |
 
 ## Where to go next
 
