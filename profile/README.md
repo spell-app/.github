@@ -40,14 +40,18 @@ _A Spanish program is a Spanish file, `Carta.es.spell`, and it compiles to the s
 
 ```text
 @spell/examples/Solitaire/Solitaire.spellml
-└──── group ──┘ └project─┘ └──── file ──┘
+└──── group ──┘ └project┘ └───── file ───┘
+
+owen@spell/solitaire/solitaire.spellml
+└ person ┘ └project┘ └───── file ───┘
 ```
 
-Every project and every file in Spell has an address like that one.
+Every project and every file in Spell has an address like these.
 It's the same address in the editor, on the command line, and in the project that imports it.
 
 A space is a person's or an organization's folder of projects:
-`@spell` is Spell's own, and `owen@spell` is a person's, at Spell.
+- `@spell/examples` is a group in `@spell`, Spell's own space.
+- `owen@spell` is a person at Spell:  their own projects, beside the organization's.
 
 If you know npm, `@spell/library/people` reads like a scoped package, `@org/name`, and it's meant to:
 whose it is, then what.
